@@ -2,18 +2,16 @@ package com.binbin.springcloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import springfox.documentation.swagger2.annotations.EnableSwagger2;
-
+import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 
 /**
  * @author binbin
- * @date 2022/6/2 上午12:11
+ * @date 2022年06月03日  上午2:22
  */
 @SpringBootApplication
-@EnableSwagger2
-public class PaymentMain8001 {
+@EnableEurekaServer
+public class EurekaMain7001 {
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8001.class,args);
+        SpringApplication.run(EurekaMain7001.class,args);
     }
-
 }
