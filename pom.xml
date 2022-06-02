@@ -7,7 +7,10 @@
   <groupId>org.example</groupId>
   <artifactId>PaymentOrder-SpringCloud</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>pom</packaging>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Cloud-provider-payment8001</module>
+    </modules>
 
 
 <!--  统一管理jar包-->
