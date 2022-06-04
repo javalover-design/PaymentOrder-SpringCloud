@@ -24,6 +24,7 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String port;
+
     /**
      * @author binbin
      * @date 2022/6/2 下午10:41
@@ -37,9 +38,9 @@ public class PaymentController {
         Integer resultRow = paymentService.create(payment);
         log.info("插入结果"+resultRow);
         if (resultRow>0){
-            return commonResult.setCode(200).setMessage("插入数据库成功,对应端口号为："+port).setData(resultRow);
+            return commonResult.setCode(200).setMessage("插入数据库成功,对应的端口号为："+port).setData(resultRow);
         }
-            return commonResult.setCode(440).setMessage(" 插入数据库失败，对应端口号为："+port).setData(null);
+            return commonResult.setCode(440).setMessage(" 插入数据库失败，对应的端口号为："+port).setData(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class PaymentController {
         CommonResult<Payment> commonResult = new CommonResult<>();
         Payment payment = paymentService.getPaymentById(id);
             if (payment!=null){
-                return commonResult.setCode(200).setMessage("查询成功,对应端口号为："+port).setData(payment);
+                return commonResult.setCode(200).setMessage("查询成功，对应的端口号为："+port).setData(payment);
             }
         return commonResult.setCode(441).setMessage("数据库查询失败,id为"+id).setData(null);
     }
