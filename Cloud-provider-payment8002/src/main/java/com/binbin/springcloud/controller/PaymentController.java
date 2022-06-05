@@ -6,7 +6,12 @@ import com.binbin.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author binbin
@@ -24,6 +29,12 @@ public class PaymentController {
 
     @Value("${server.port}")
     private String port;
+
+    /**
+     * 注入服务发现客户端，可以使用此对象查询自身在注册中心注册的所有服务信息
+     */
+    @Resource
+    private DiscoveryClient discoveryClient;
 
     /**
      * @author binbin
@@ -58,6 +69,33 @@ public class PaymentController {
                 return commonResult.setCode(200).setMessage("查询成功，对应的端口号为："+port).setData(payment);
             }
         return commonResult.setCode(441).setMessage("数据库查询失败,id为"+id).setData(null);
+    }
+
+    /**
+     * @author binbin
+     * @date 2022/6/5 下午4:22
+     * @param null
+     * @return null
+     *  尝试获取注册中心的所有注册信息
+     */
+
+    @GetMapping("/payment/discovery")
+    public Object getDiscovery(){
+        //直接获取对应的服务信息
+        List<String> services = discoveryClient.getServices();
+        for (String service : services) {
+            log.info("注册的服务信息如下："+service);
+        }
+
+        //根据对外暴露的服务名称获取对应的信息
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        //遍历所有的实例名称
+        for (ServiceInstance instance : instances) {
+            log.info(instance.getServiceId()+"\t"+instance.getHost()+"\t"+instance.getPort()+"\t"+instance.getUri());
+
+        }
+
+        return this.discoveryClient;
     }
 
 }

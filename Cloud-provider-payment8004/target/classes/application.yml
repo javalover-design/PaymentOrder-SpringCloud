@@ -1,6 +1,5 @@
 server:
-  port: 8002
-
+  port: 8004
 spring:
   application:
     name: cloud-payment-service
@@ -10,15 +9,9 @@ spring:
     url: jdbc:mysql://localhost:3306/DB2022?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     username: root
     password: 123456
+  cloud:
+    zookeeper:
+      connect-string: 10.200.2.48:2181
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.binbin.springcloud.entities
-eureka:
-  client:
-    register-with-eureka: true
-    fetch-registry: true  #表示从服务端抓取已有的注册信息，集群需要设置为true方便配合负载均衡
-    service-url:  #设置注册地址
-      defaultZone: http://eureka7001.cn:7001/eureka,http://eureka7002.cn:7002/eureka
-  instance:
-    instance-id: payment8002
-    prefer-ip-address: true #访问时现实ip地址

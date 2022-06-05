@@ -19,4 +19,8 @@ eureka:
     fetch-registry: true  #表示从服务端抓取已有的注册信息，集群需要设置为true方便配合负载均衡
     service-url:  #设置注册地址
       defaultZone: http://eureka7001.cn:7001/eureka,http://eureka7002.cn:7002/eureka
-
+  instance:
+    instance-id: payment8001
+    prefer-ip-address: true #访问时现实ip地址
+    lease-renewal-interval-in-seconds: 1 #eureka客户端向服务端发送心跳的间隔时间，默认是30s
+    lease-expiration-duration-in-seconds: 2 #eureka服务端在收到客户端最后一次心跳的等待时间上限（默认90），超时则剔除
