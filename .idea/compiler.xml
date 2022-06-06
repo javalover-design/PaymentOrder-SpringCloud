@@ -12,6 +12,7 @@
         <module name="Cloud-eureka-server7001" />
         <module name="Cloud-provider-payment8001" />
         <module name="Cloud-provider-payment8004" />
+        <module name="Cloud-consumerzk-order80" />
         <module name="Cloud-provider-payment8002" />
         <module name="Cloud-api-common" />
       </profile>

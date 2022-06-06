@@ -1,0 +1,9 @@
+server:
+  port: 9999
+
+spring:
+  application:
+    name: cloud-order-service
+  cloud:
+    zookeeper:
+      connect-string: 10.200.2.48:2181

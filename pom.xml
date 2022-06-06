@@ -16,6 +16,7 @@
         <module>Cloud-eureka-server7002</module>
         <module>Cloud-provider-payment8002</module>
         <module>Cloud-provider-payment8004</module>
+        <module>Cloud-consumerzk-order80</module>
     </modules>
 
 
