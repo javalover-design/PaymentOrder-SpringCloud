@@ -1,0 +1,12 @@
+server:
+  port: 9999
+spring:
+  application:
+    name: consul-consumer-order
+
+  cloud:
+    consul:
+      discovery:
+        service-name: ${spring.application.name}
+      host: localhost
+      port: 8500 #设置consul的访问地址
