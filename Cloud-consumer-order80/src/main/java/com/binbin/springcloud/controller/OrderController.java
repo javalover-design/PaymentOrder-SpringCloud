@@ -4,6 +4,7 @@ import com.binbin.springcloud.entities.CommonResult;
 import com.binbin.springcloud.entities.Payment;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -51,5 +52,23 @@ public class OrderController {
     @GetMapping("/consumer/payment/get/{id}")
     public CommonResult<Payment> getPayment(@PathVariable("id") Long id){
         return restTemplate.getForObject(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+    }
+
+
+    /**
+     * @author binbin
+     * @date 2022/6/8 下午11:26
+     * @param id
+     * @return com.binbin.springcloud.entities.CommonResult<com.binbin.springcloud.entities.Payment>
+     * 使用get/postforEntity方法表示获取到的是ResponseEntity其中还包含着请求头等详细信息，而forObject主要是返回
+     * json字符串
+     */
+    @GetMapping("/consumer/getPayment/{id}")
+    public CommonResult<Payment> getPayment2(@PathVariable("id") Long id){
+        ResponseEntity<CommonResult> result=restTemplate.getForEntity(PAYMENT_URL+"/payment/get/"+id,CommonResult.class);
+        if (result.getStatusCode().is2xxSuccessful()) {
+            return result.getBody();
+        }
+        return new CommonResult<>(400,"Failed");
     }
 }
