@@ -18,7 +18,6 @@
         <module>Cloud-provider-payment8004</module>
         <module>Cloud-consumerzk-order80</module>
         <module>Cloud-providerconsul-payment8006</module>
-        <module>C</module>
         <module>Cloud-consumerconsul-order80</module>
     </modules>
 

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 /**
  * @author binbin
  * @date 2022年06月08日  下午11:43
+ * 自定义轮询规则
  */
 @Configuration
 public class MySelfRule {

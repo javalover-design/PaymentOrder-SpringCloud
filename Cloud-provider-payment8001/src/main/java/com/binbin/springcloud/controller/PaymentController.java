@@ -96,4 +96,16 @@ public class PaymentController {
 
         return this.discoveryClient;
     }
+
+
+    /**
+     * @author binbin
+     * @date 2022/6/9 下午9:17
+     * @return java.lang.String 端口号
+     * 获取当前服务的端口号
+     */
+    @GetMapping("/payment/port")
+    public String getPaymentServerPort(){
+        return port;
+    }
 }

@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.ribbon.RibbonClient;
  */
 @SpringBootApplication(exclude= {DataSourceAutoConfiguration.class})
 @EnableEurekaClient
-@RibbonClient(name = "CLOUD-PAYMENT-SERVICE",configuration = MySelfRule.class)
+@RibbonClient(name = "CLOUD-PAYMENT-SERVICE",configuration = MySelfRule.class) //定义轮询的服务名以及对应的轮询规则类
 public class OrderMain9999 {
     public static void main(String[] args) {
         SpringApplication.run(OrderMain9999.class,args);
