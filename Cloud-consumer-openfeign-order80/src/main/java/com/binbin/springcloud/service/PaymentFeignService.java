@@ -31,10 +31,17 @@ public interface PaymentFeignService {
      * Gets payment by id.
      *
      * @param id the id
-     * @return the payment by id
-     * 此处客户端调用还需要进一步的封装，将返回的信息封装成CommonResult
+     * @return the payment by id 此处客户端调用还需要进一步的封装，将返回的信息封装成CommonResult
      */
     @GetMapping("/payment/get/{id}")
     CommonResult<Payment> getPaymentById(@PathVariable("id") Long id);
+
+    /**
+     * Gets payment port.
+     *
+     * @return the payment port
+     */
+    @GetMapping("/payment/timeout/port")
+    String getPaymentPort();
 
 }

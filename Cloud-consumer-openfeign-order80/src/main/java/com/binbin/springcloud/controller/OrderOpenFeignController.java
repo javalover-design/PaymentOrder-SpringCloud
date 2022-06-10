@@ -38,4 +38,15 @@ public class OrderOpenFeignController {
         return paymentFeignService.getPaymentById(id);
 
     }
+
+    /**
+     * @author binbin
+     * @date 2022/6/10 下午1:11
+     * @return java.lang.String
+     * 返回端口号，测试超时
+     */
+    @GetMapping("/consumer/payment/port")
+    public String getPaymentPort(){
+        return paymentFeignService.getPaymentPort();
+    }
 }
