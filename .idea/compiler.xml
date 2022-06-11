@@ -10,6 +10,7 @@
         <module name="Cloud-eureka-server7002" />
         <module name="Cloud-consumer-order80" />
         <module name="Cloud-eureka-server7001" />
+        <module name="Cloud-provider-hystrix-payment8001" />
         <module name="Cloud-providerconsul-payment8006" />
         <module name="Cloud-provider-payment8001" />
         <module name="Cloud-provider-payment8004" />
