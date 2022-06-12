@@ -38,9 +38,9 @@ public class PaymentController {
 
     /**
      * @author binbin
-     * @date 2022/6/11 下午9:25
-     * @param id 
-     * @return java.lang.String 
+     * @date 2022/6/11 下午9:37
+ * @param id
+ * @return java.lang.String
      */
     @GetMapping("/payment/hystrix/timeout/{id}")
     public String paymentInfoTimeOut(@PathVariable("id") Long id){

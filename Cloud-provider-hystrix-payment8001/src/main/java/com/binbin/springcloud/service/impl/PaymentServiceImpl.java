@@ -3,6 +3,8 @@ package com.binbin.springcloud.service.impl;
 import com.binbin.springcloud.dao.PaymentDao;
 import com.binbin.springcloud.entities.Payment;
 import com.binbin.springcloud.service.PaymentService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -55,6 +57,16 @@ public class PaymentServiceImpl implements PaymentService {
         return "线程池： "+Thread.currentThread().getName()+"PaymentInfoOK,id："+id+"\t"+"正确！！！！！！！！";
     }
 
+    /**
+     * @author binbin
+     * @date 2022/6/12 下午7:43
+     * @param id
+     * @return java.lang.String
+     */
+    @HystrixCommand(fallbackMethod = "paymentInfoTimeOutHandler",commandProperties = {
+            @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds",value = "5000")
+            //此处表示设置正常的超时时间为3秒钟，如果超过3秒，则会报错
+    })
     @Override
     public String paymentInfoTimeOut(Long id) {
         int timeOut=3;
@@ -64,5 +76,18 @@ public class PaymentServiceImpl implements PaymentService {
            throw new RuntimeException("超时了.....");
         }
         return  "线程池： "+Thread.currentThread().getName()+"PaymentInfoTimeOut,id："+id+"\t"+"正确，但是发生超时！！！！！！！！超时了"+timeOut+"秒钟";
+    }
+
+
+    /**
+     * @author binbin
+     * @date 2022/6/12 下午7:46
+     * @param id
+     * @return java.lang.String
+     * 服务超时处理的兜底方法
+     */
+    public String paymentInfoTimeOutHandler(Long id){
+        return  "线程池： "+Thread.currentThread().getName()+"PaymentInfoTimeOutHandler,id："+id+"\t"+"8001出现了问题！！！！！！！！真的很抱歉，我们不能提供服务了。";
+
     }
 }
