@@ -1,3 +1,4 @@
 /home/lambda/SpringCloud/PaymentOrder-SpringCloud/Cloud-consumer-feign-hystrix-order80/src/main/java/com/binbin/springcloud/controller/PaymentHystrixController.java
+/home/lambda/SpringCloud/PaymentOrder-SpringCloud/Cloud-consumer-feign-hystrix-order80/src/main/java/com/binbin/springcloud/service/PaymentFallbackService.java
 /home/lambda/SpringCloud/PaymentOrder-SpringCloud/Cloud-consumer-feign-hystrix-order80/src/main/java/com/binbin/springcloud/service/PaymentHystrixService.java
 /home/lambda/SpringCloud/PaymentOrder-SpringCloud/Cloud-consumer-feign-hystrix-order80/src/main/java/com/binbin/springcloud/OrderHystrixMain9999.java
