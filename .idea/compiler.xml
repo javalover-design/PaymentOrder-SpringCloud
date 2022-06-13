@@ -19,6 +19,7 @@
         <module name="Cloud-consumer-feign-hystrix-order80" />
         <module name="Cloud-eureka-server7001" />
         <module name="Cloud-provider-hystrix-payment8001" />
+        <module name="Cloud-consumer-hystrix-dashboard9001" />
         <module name="Cloud-consumerzk-order80" />
       </profile>
     </annotationProcessing>

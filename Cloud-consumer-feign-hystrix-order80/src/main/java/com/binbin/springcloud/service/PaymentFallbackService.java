@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author binbin
  * @date 2022年06月13日  下午7:16
- * 编写该类实现服务重写方法，这些方法可以用作降级处理，用于统一管理服务接口中的方法回调。
+ * 编写该类实现服务重写方法，这些方法可以用作降级处理，用于统一管理服务接口中的方法回调(主要针对服务宕机)。
  */
 @Component
 public class PaymentFallbackService implements PaymentHystrixService {

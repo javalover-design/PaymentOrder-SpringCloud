@@ -23,6 +23,7 @@ public class PaymentController {
     private String port;
 
 
+    //-----服务降级
     /**
      * @author binbin
      * @date 2022/6/11 下午9:23
@@ -49,6 +50,21 @@ public class PaymentController {
             return result;
     }
 
+    //---------服务降级
 
+    //----------服务熔断
+    /**
+     * @author binbin
+     * @date 2022/6/13 下午8:11
+     * @param id
+     * @return java.lang.String
+     * 调用服务熔断方法
+     */
+    @GetMapping("/payment/hystrix/circuitbreaker/{id}")
+    public String paymentCircuitBreaker(@PathVariable("id") Long id){
+        return paymentService.paymentCircuitBreaker(id);
+    }
+
+    //------------服务熔断
 
 }

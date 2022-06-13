@@ -44,9 +44,19 @@ public interface PaymentService {
     /**
      * Payment info time out string.
      * 模拟不正常的方法
+     *
      * @param id the id
      * @return the string
      */
     String paymentInfoTimeOut(@Param("id") Long id);
+
+
+    /**
+     * Payment circuit breaker string.
+     *测试断路器的方法
+     * @param id the id
+     * @return the string
+     */
+    String paymentCircuitBreaker(@Param("id") Long id);
 
 }
