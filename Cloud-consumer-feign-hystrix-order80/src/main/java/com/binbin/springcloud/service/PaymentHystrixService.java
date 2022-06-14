@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @date 2022年06月12日 下午7:08
  */
 @Component
-/**添加降级处理的类，该类实现了服务方法的接口*/
+/**添加降级处理的类，该类实现了服务方法的接口，当服务不可用的时候，就会调用指定类的方法*/
 @FeignClient(value = "CLOUD-PAYMENT-HYSTRIX-SERVICE",fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
 
