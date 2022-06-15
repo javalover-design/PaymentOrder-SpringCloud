@@ -11,6 +11,7 @@
         <module name="Cloud-providerconsul-payment8006" />
         <module name="Cloud-provider-payment8001" />
         <module name="Cloud-provider-payment8004" />
+        <module name="Cloud-gateway-gateway9527" />
         <module name="Cloud-provider-payment8002" />
         <module name="Cloud-api-common" />
         <module name="Cloud-consumerconsul-order80" />

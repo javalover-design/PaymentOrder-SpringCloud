@@ -23,6 +23,7 @@
         <module>Cloud-provider-hystrix-payment8001</module>
         <module>Cloud-consumer-feign-hystrix-order80</module>
         <module>Cloud-consumer-hystrix-dashboard9001</module>
+        <module>Cloud-gateway-gateway9527</module>
     </modules>
 
 
