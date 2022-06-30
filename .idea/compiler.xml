@@ -21,6 +21,7 @@
         <module name="Cloud-eureka-server7001" />
         <module name="Cloud-provider-hystrix-payment8001" />
         <module name="Cloud-consumer-hystrix-dashboard9001" />
+        <module name="Cloud-config-client3355" />
         <module name="Cloud-consumerzk-order80" />
         <module name="Cloud-config-center3344" />
       </profile>
