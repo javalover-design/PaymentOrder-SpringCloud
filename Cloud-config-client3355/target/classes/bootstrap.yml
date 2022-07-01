@@ -19,3 +19,10 @@ eureka:
     fetch-registry: true  #表示从服务端抓取已有的注册信息，集群需要设置为true方便配合负载均衡
     service-url:  #设置注册地址
       defaultZone: http://eureka7001.cn:7001/eureka,http://eureka7002.cn:7002/eureka
+
+# 暴露监控端口
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
